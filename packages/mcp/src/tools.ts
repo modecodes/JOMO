@@ -2,7 +2,7 @@
  * Tool handlers. Each maps onto one SDK method and returns JSON-safe data. Private keys are never
  * included in any result; state-changing tools go through two-phase confirmation.
  */
-import { DEFAULT_SCAN_LOOKBACK, RouterUnavailableError, STEALTH_ROUTER_MAX_GAS_STIPEND, isStealthMetaAddress, type SendParams, type StealthPayment } from "@jomo/sdk";
+import { DEFAULT_SCAN_LOOKBACK, RouterUnavailableError, STEALTH_ROUTER_MAX_GAS_STIPEND, isStealthMetaAddress, type SendParams, type StealthPayment } from "@usejomo/sdk";
 import { formatUnits, getAddress, isAddress, type Address, type Hex } from "viem";
 import type { z } from "zod";
 import { AmountFormatError, formatAmount, parseNativeAmount, parseTokenAmount, type AmountInput } from "./amounts.js";

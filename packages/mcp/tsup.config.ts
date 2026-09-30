@@ -7,6 +7,6 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   target: "es2022",
-  external: ["viem", "@jomo/sdk", "@modelcontextprotocol/sdk", "zod"],
+  external: ["viem", "@usejomo/sdk", "@modelcontextprotocol/sdk", "zod"],
   banner: ({ format }) => (format === "esm" ? { js: "#!/usr/bin/env node" } : {}),
 });

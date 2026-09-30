@@ -90,6 +90,6 @@ Tool errors mirror SDK errors by code: `RECIPIENT_NOT_REGISTERED`, `ROUTER_UNAVA
 ## OpenAI function schemas
 
 ```ts
-import { jomoToolSchemas } from "@jomo/mcp/schemas";
+import { jomoToolSchemas } from "@usejomo/mcp/schemas";
 // [{ type: "function", function: { name: "jomo_send", description, parameters } }, …]
 ```

@@ -9,16 +9,16 @@
   },
   "scripts": {
     "build": "pnpm -r --filter ./packages/** --filter ./apps/** run build",
-    "build:sdk": "pnpm --filter @jomo/sdk build",
-    "build:web": "pnpm --filter @jomo/web build",
-    "dev:web": "pnpm --filter @jomo/web dev",
-    "test": "pnpm --filter @jomo/sdk test && pnpm --filter @jomo/mcp test && pnpm --filter @jomo/contracts test",
-    "test:sdk": "pnpm --filter @jomo/sdk test",
-    "test:contracts": "pnpm --filter @jomo/contracts test",
+    "build:sdk": "pnpm --filter @usejomo/sdk build",
+    "build:web": "pnpm --filter @usejomo/web build",
+    "dev:web": "pnpm --filter @usejomo/web dev",
+    "test": "pnpm --filter @usejomo/sdk test && pnpm --filter @usejomo/mcp test && pnpm --filter @usejomo/contracts test",
+    "test:sdk": "pnpm --filter @usejomo/sdk test",
+    "test:contracts": "pnpm --filter @usejomo/contracts test",
     "typecheck": "pnpm -r run typecheck",
-    "demo": "pnpm --filter @jomo/example-agent-to-agent start",
-    "test:mcp": "pnpm --filter @jomo/mcp test",
-    "build:mcp": "pnpm --filter @jomo/mcp build"
+    "demo": "pnpm --filter @usejomo/example-agent-to-agent start",
+    "test:mcp": "pnpm --filter @usejomo/mcp test",
+    "build:mcp": "pnpm --filter @usejomo/mcp build"
   },
   "devDependencies": {
     "typescript": "5.9.3"

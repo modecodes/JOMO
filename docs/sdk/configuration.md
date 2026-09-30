@@ -20,7 +20,7 @@
 | `pollingInterval` | `number` | `2000` | ms, for `watch()` |
 
 ```ts
-import { createPrivateAgent, robinhood } from "@jomo/sdk";
+import { createPrivateAgent, robinhood } from "@usejomo/sdk";
 import { http } from "viem";
 
 const agent = createPrivateAgent({
@@ -40,7 +40,7 @@ previousStealthRouters }` and is generated from deployments that were verified o
 Chains without an entry run in direct mode. To know the addresses before deploying:
 
 ```ts
-import { computeDeploymentAddresses } from "@jomo/sdk";
+import { computeDeploymentAddresses } from "@usejomo/sdk";
 
 const { feeVault, stealthRouter } = computeDeploymentAddresses({
   feeVaultOwner: "0xMultisig",

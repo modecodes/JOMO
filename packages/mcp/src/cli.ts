@@ -12,7 +12,7 @@ import { createInterface } from "node:readline";
 import { Writable } from "node:stream";
 import type { Hex } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { StealthKeys } from "@jomo/sdk";
+import { StealthKeys } from "@usejomo/sdk";
 import { chainFromName, configFromEnv, defaultKeystorePath, ENV, passphraseFromEnv } from "./config.js";
 import { createContext } from "./context.js";
 import { assertLoopbackHost, startHttp } from "./http.js";

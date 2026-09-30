@@ -10,7 +10,7 @@ An agent's stealth identity is two secp256k1 key pairs wrapped in `StealthKeys`.
 ## Creating keys
 
 ```ts
-import { StealthKeys } from "@jomo/sdk";
+import { StealthKeys } from "@usejomo/sdk";
 
 // Recommended for agents with a secrets store: random keys, persisted once.
 const fresh = StealthKeys.generate();
@@ -49,7 +49,7 @@ agent.stealthMetaAddress;           // prefix chosen from the agent's chain
 Parse one you received:
 
 ```ts
-import { parseStealthMetaAddress, isStealthMetaAddress } from "@jomo/sdk";
+import { parseStealthMetaAddress, isStealthMetaAddress } from "@usejomo/sdk";
 
 if (isStealthMetaAddress(input)) {
   const { spendingPublicKey, viewingPublicKey, chainShortName } = parseStealthMetaAddress(input);
@@ -75,7 +75,7 @@ from the viewing private key and a dummy spending key is **not** supported — i
 low-level check yourself:
 
 ```ts
-import { checkStealthAddress } from "@jomo/sdk";
+import { checkStealthAddress } from "@usejomo/sdk";
 
 const { matches } = checkStealthAddress({
   stealthAddress,        // from the announcement

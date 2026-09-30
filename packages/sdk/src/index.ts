@@ -1,5 +1,5 @@
 /**
- * @jomo/sdk — privacy-preserving transactions for autonomous agents on Robinhood Chain.
+ * @usejomo/sdk — privacy-preserving transactions for autonomous agents on Robinhood Chain.
  *
  * Built on ERC-5564 stealth addresses and the ERC-6538 registry, both deployed at their canonical
  * addresses on Robinhood Chain mainnet (4663) and testnet (46630).

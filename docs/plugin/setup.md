@@ -1,15 +1,15 @@
 # Plugin: overview & setup
 
 > **Status: built and tested** (`packages/mcp`, 16 tests against an Anvil replica of Robinhood Chain).
-> Publishing to npm as `@jomo/mcp` needs the `@jomo` scope; until then run it from the repo with
-> `pnpm --filter @jomo/mcp build && node packages/mcp/dist/cli.js`.
+> Publishing to npm as `@usejomo/mcp` needs the `@jomo` scope; until then run it from the repo with
+> `pnpm --filter @usejomo/mcp build && node packages/mcp/dist/cli.js`.
 
-The plugin is the second door into the privacy layer. It wraps `@jomo/sdk` in an MCP server so
+The plugin is the second door into the privacy layer. It wraps `@usejomo/sdk` in an MCP server so
 prompt-driven agents — Claude, OpenAI-based assistants, Google Antigravity, and any MCP-capable
 client — perform private transactions on Robinhood Chain by calling tools.
 
 ```
-prompt ──▶ assistant ──▶ MCP client ──▶ jomo MCP server ──▶ @jomo/sdk ──▶ Robinhood Chain
+prompt ──▶ assistant ──▶ MCP client ──▶ jomo MCP server ──▶ @usejomo/sdk ──▶ Robinhood Chain
                                         (local process; holds the keys)
 ```
 
@@ -47,7 +47,7 @@ JOMO_LIMIT_ETH_PER_TX=0.05 JOMO_LIMIT_ETH_PER_DAY=0.5 \
 JOMO_LIMIT_TOKENS='{"0xUSDC…": {"perTx": "100", "perDay": "1000"}}' \
 JOMO_ALLOWED_RECIPIENTS=0xSupplier…,st:robinhoodchain:0x… \
 JOMO_SWEEP_TO=0xTreasury… \
-npx @jomo/mcp
+npx @usejomo/mcp
 ```
 
 - A payment within the limits runs at once. The fee and any gas stipend count toward them.
@@ -88,7 +88,7 @@ jomo-mcp address             # identity + stealth meta-address
 ## Claude Code
 
 ```bash
-claude mcp add jomo -- npx @jomo/mcp
+claude mcp add jomo -- npx @usejomo/mcp
 ```
 
 or, as a plugin, `.claude-plugin/plugin.json` bundles the server plus an `jomo` skill that teaches
@@ -101,7 +101,7 @@ the model the privacy scope and how to phrase confirmations.
   "mcpServers": {
     "jomo": {
       "command": "npx",
-      "args": ["@jomo/mcp"],
+      "args": ["@usejomo/mcp"],
       "env": { "JOMO_CHAIN": "robinhoodTestnet" }
     }
   }
@@ -122,21 +122,21 @@ Point the Responses API or Agents SDK at the server's streamable-HTTP endpoint:
 ```
 
 Clients without MCP support can import the same tools as function-calling schemas from
-`@jomo/mcp/schemas`.
+`@usejomo/mcp/schemas`.
 
 ## Antigravity and other MCP clients
 
 Any client that speaks MCP over `stdio` or streamable HTTP works with the standard config:
 
 ```json
-{ "jomo": { "command": "npx", "args": ["@jomo/mcp"] } }
+{ "jomo": { "command": "npx", "args": ["@usejomo/mcp"] } }
 ```
 
 ## Running the server directly
 
 ```bash
-npx @jomo/mcp              # stdio
-npx @jomo/mcp --http 8787  # local HTTP on 127.0.0.1:8787/mcp; send Authorization: Bearer <JOMO_HTTP_TOKEN>
+npx @usejomo/mcp              # stdio
+npx @usejomo/mcp --http 8787  # local HTTP on 127.0.0.1:8787/mcp; send Authorization: Bearer <JOMO_HTTP_TOKEN>
 ```
 
 Next: [Tools & prompts](tools.md)

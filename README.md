@@ -9,7 +9,7 @@ app / assistant / agent  →  JOMO  →  private transaction  →  Robinhood Cha
 Private transactions for anything: ETH or any token, any amount, from any app, AI assistant or
 autonomous agent. Every transaction lands on a fresh address only the recipient can find, so nobody
 can map who sent what to whom, and nothing has to be deployed to use it. Three ways in: the
-TypeScript SDK for code, `@jomo/mcp` (an MCP server + Claude Code plugin for Claude, OpenAI,
+TypeScript SDK for code, `@usejomo/mcp` (an MCP server + Claude Code plugin for Claude, OpenAI,
 Antigravity and other MCP clients) for prompts, and the same server in autonomous mode for agents
 that run on their own within spending limits. $JOMO, the token attached to the layer: a 1%
 protocol fee on every router transaction goes to a vault that can pass fees on only to the contract
@@ -17,8 +17,8 @@ that pays $JOMO holders (fee side live on mainnet; payout side pre-launch).
 
 | Package | What it is |
 |---|---|
-| [`packages/sdk`](packages/sdk) | `@jomo/sdk` — stealth addresses (ERC-5564/6538), encrypted memos, scanning, stealth spending |
-| [`packages/mcp`](packages/mcp) | `@jomo/mcp` — the SDK as MCP tools the user approves call by call (elicitation), with an encrypted keystore; Claude Code plugin in `plugin/` |
+| [`packages/sdk`](packages/sdk) | `@usejomo/sdk` — stealth addresses (ERC-5564/6538), encrypted memos, scanning, stealth spending |
+| [`packages/mcp`](packages/mcp) | `@usejomo/mcp` — the SDK as MCP tools the user approves call by call (elicitation), with an encrypted keystore; Claude Code plugin in `plugin/` |
 | [`packages/contracts`](packages/contracts) | Foundry: `StealthRouter` (1% fee) + `FeeVault`, vendored canonical reference contracts, tests, deploy scripts |
 | [`apps/web`](apps/web) | Landing page (Vite + TypeScript, no framework, no CSS files) |
 | [`examples/agent-to-agent`](examples/agent-to-agent) | Two agents transacting privately on a local Robinhood-like Anvil |
@@ -30,7 +30,7 @@ Requirements: Node ≥ 20.19, pnpm 9, [Foundry](https://getfoundry.sh) (forge + 
 
 ```bash
 pnpm install
-pnpm --filter @jomo/contracts build   # compile contracts, export ABIs into the SDK
+pnpm --filter @usejomo/contracts build   # compile contracts, export ABIs into the SDK
 pnpm test                                  # SDK (vitest + Anvil) and contracts (forge)
 pnpm build:sdk
 pnpm demo                                  # two agents paying each other privately on Anvil
@@ -63,7 +63,7 @@ public. Nothing here is "untraceable".
 - SDK: 41 tests pass, including 100 randomized cross-checks against ScopeLift's reference
   ERC-5564 implementation and a full Anvil end-to-end flow with fees and counters.
 - Mainnet readiness: see [docs/internal/MAINNET-READINESS.md](docs/internal/MAINNET-READINESS.md).
-- `@jomo/mcp` is built and tested (19 tests on an Anvil replica); publishing needs the `@jomo` npm scope.
+- `@usejomo/mcp` is built and tested (19 tests on an Anvil replica); publishing needs the `@jomo` npm scope.
 - $JOMO launches on a Robinhood Chain launchpad. The router's fees reach holders through the vault's
   sink, a payout contract that is designed, not built; nothing token-related is deployed.
 - No audit yet. Not affiliated with or endorsed by Robinhood.
@@ -88,5 +88,5 @@ site (hash routing, so no server rewrites are needed).
    address) the page shows no address at all. To change it, edit the variable and deploy.
 4. Pushes redeploy only on changes under `apps/web/`, the SDK's generated module, or the lockfile.
 
-Do not deploy `@jomo/mcp` as a public Railway service: it holds signing keys and its HTTP
+Do not deploy `@usejomo/mcp` as a public Railway service: it holds signing keys and its HTTP
 transport has no authentication. Run it next to the agent that uses it.

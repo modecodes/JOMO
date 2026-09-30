@@ -7,13 +7,13 @@
 - A funded key on Robinhood Chain testnet — [faucet](https://faucet.testnet.chain.robinhood.com)
 
 ```bash
-pnpm add @jomo/sdk viem
+pnpm add @usejomo/sdk viem
 ```
 
 ## 1. Create an agent
 
 ```ts
-import { createPrivateAgent, StealthKeys, robinhoodTestnet } from "@jomo/sdk";
+import { createPrivateAgent, StealthKeys, robinhoodTestnet } from "@usejomo/sdk";
 import { http, parseEther } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 
@@ -86,7 +86,7 @@ singletons at their real addresses, router at its deterministic address):
 ```bash
 git clone https://github.com/modecodes/JOMO.git && cd JOMO
 pnpm install
-pnpm --filter @jomo/contracts build
+pnpm --filter @usejomo/contracts build
 pnpm demo            # two agents paying each other privately
 pnpm test            # SDK (vitest + Anvil) and contracts (forge)
 ```

@@ -1,4 +1,4 @@
-import { robinhood, robinhoodTestnet, StealthKeys, createPrivateAgent, type PrivateAgent } from "@jomo/sdk";
+import { robinhood, robinhoodTestnet, StealthKeys, createPrivateAgent, type PrivateAgent } from "@usejomo/sdk";
 import { spawnSync } from "node:child_process";
 import { http, type Address, type Chain, type Hex, type Transport } from "viem";
 import { privateKeyToAccount } from "viem/accounts";

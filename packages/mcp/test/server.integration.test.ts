@@ -6,7 +6,7 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import { ElicitRequestSchema } from "@modelcontextprotocol/sdk/types.js";
-import { checkStealthAddress, createPrivateAgent, StealthKeys, encodeAnnouncementMetadata, erc5564AnnouncerAbi } from "@jomo/sdk";
+import { checkStealthAddress, createPrivateAgent, StealthKeys, encodeAnnouncementMetadata, erc5564AnnouncerAbi } from "@usejomo/sdk";
 import { createWalletClient, http, parseEther, type Address, type Chain, type Hex } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { robinhoodTestnet } from "viem/chains";
@@ -16,7 +16,7 @@ import { ANVIL_KEYS, startAnvil, type AnvilInstance } from "../../sdk/test/helpe
 import { deployFixture, type Fixture } from "../../sdk/test/helpers/deploy.js";
 import { Confirmations } from "../src/confirm.js";
 import { createContext, type JomoContext } from "../src/context.js";
-import { generateStealthAddress, erc6538RegistryAbi } from "@jomo/sdk";
+import { generateStealthAddress, erc6538RegistryAbi } from "@usejomo/sdk";
 import { mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";

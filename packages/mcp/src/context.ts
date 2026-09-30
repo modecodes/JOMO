@@ -1,4 +1,4 @@
-import { DEFAULT_SCAN_LOOKBACK, type PrivateAgent } from "@jomo/sdk";
+import { DEFAULT_SCAN_LOOKBACK, type PrivateAgent } from "@usejomo/sdk";
 import { appendFileSync, mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import { erc20Abi, formatUnits, getAddress, isAddress, parseUnits, type Address } from "viem";

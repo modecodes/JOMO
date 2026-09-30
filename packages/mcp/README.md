@@ -1,13 +1,13 @@
-# @jomo/mcp
+# @usejomo/mcp
 
 JOMO as MCP tools: private transactions on Robinhood Chain from Claude, OpenAI-based assistants,
 Google Antigravity or any MCP client, approved by you or, for an autonomous agent, by spending limits
-you set. Wraps `@jomo/sdk` one-to-one.
+you set. Wraps `@usejomo/sdk` one-to-one.
 
 ```bash
-npx @jomo/mcp init                       # create the encrypted keystore, print the identity address
-JOMO_KEYSTORE_PASSPHRASE_CMD='security find-generic-password -s jomo-mcp -w' npx @jomo/mcp   # stdio server
-npx @jomo/mcp --http 8787                # local HTTP on 127.0.0.1:8787/mcp, bearer token required
+npx @usejomo/mcp init                       # create the encrypted keystore, print the identity address
+JOMO_KEYSTORE_PASSPHRASE_CMD='security find-generic-password -s jomo-mcp -w' npx @usejomo/mcp   # stdio server
+npx @usejomo/mcp --http 8787                # local HTTP on 127.0.0.1:8787/mcp, bearer token required
 ```
 
 | Tool | Does | Confirms |
@@ -48,7 +48,7 @@ JOMO_LIMIT_ETH_PER_TX=0.05 JOMO_LIMIT_ETH_PER_DAY=0.5 \
 JOMO_LIMIT_TOKENS='{"0xUSDC…": {"perTx": "100", "perDay": "1000"}}' \
 JOMO_ALLOWED_RECIPIENTS=0xSupplier…,st:robinhoodchain:0x… \
 JOMO_SWEEP_TO=0xTreasury… \
-npx @jomo/mcp
+npx @usejomo/mcp
 ```
 
 - A payment within the limits runs at once. The fee and any gas stipend count toward them.
@@ -82,9 +82,9 @@ npx @jomo/mcp
 
 ## Clients
 
-- **Claude Code:** `claude mcp add jomo -- npx -y @jomo/mcp`, or install the bundled plugin in `plugin/` (server config + a skill that teaches confirmations and the privacy scope).
+- **Claude Code:** `claude mcp add jomo -- npx -y @usejomo/mcp`, or install the bundled plugin in `plugin/` (server config + a skill that teaches confirmations and the privacy scope).
 - **Claude Desktop:** add the `plugin/.mcp.json` server block to `claude_desktop_config.json`.
-- **OpenAI:** point the Responses API / Agents SDK MCP tool at `http://127.0.0.1:8787/mcp`, or import `jomoToolSchemas` from `@jomo/mcp/schemas` for function calling.
+- **OpenAI:** point the Responses API / Agents SDK MCP tool at `http://127.0.0.1:8787/mcp`, or import `jomoToolSchemas` from `@usejomo/mcp/schemas` for function calling.
 - **Antigravity and others:** any MCP client over stdio or streamable HTTP.
 
 `--http` listens on loopback only, requires the bearer token (`JOMO_HTTP_TOKEN`, or the one printed at
@@ -94,6 +94,6 @@ another machine, put it behind a proxy that adds TLS; the token still applies.
 ## Development
 
 ```bash
-pnpm --filter @jomo/mcp test    # vitest, spawns Anvil configured like Robinhood Chain testnet
-pnpm --filter @jomo/mcp build   # tsup → dist (ESM + CJS + types), bin jomo-mcp
+pnpm --filter @usejomo/mcp test    # vitest, spawns Anvil configured like Robinhood Chain testnet
+pnpm --filter @usejomo/mcp build   # tsup → dist (ESM + CJS + types), bin jomo-mcp
 ```

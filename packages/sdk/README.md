@@ -1,4 +1,4 @@
-# @jomo/sdk
+# @usejomo/sdk
 
 The privacy layer for **Robinhood Chain**: private transactions for ETH and any token, from any app,
 assistant or agent.
@@ -9,7 +9,7 @@ on Robinhood Chain mainnet (4663) and testnet (46630) — plus encrypted memos a
 small router contract for atomic pay-and-announce with gas stipends.
 
 ```ts
-import { createPrivateAgent, StealthKeys, robinhoodTestnet } from "@jomo/sdk";
+import { createPrivateAgent, StealthKeys, robinhoodTestnet } from "@usejomo/sdk";
 import { parseEther } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 
@@ -40,7 +40,7 @@ What you don't: amount privacy or first-hop sender privacy. Read the
 
 ```bash
 pnpm install
-pnpm --filter @jomo/contracts build   # forge build + export ABIs into src/generated
-pnpm --filter @jomo/sdk test          # vitest: unit + Anvil integration (needs foundry)
-pnpm --filter @jomo/sdk build         # tsup → dist (ESM + CJS + d.ts)
+pnpm --filter @usejomo/contracts build   # forge build + export ABIs into src/generated
+pnpm --filter @usejomo/sdk test          # vitest: unit + Anvil integration (needs foundry)
+pnpm --filter @usejomo/sdk build         # tsup → dist (ESM + CJS + d.ts)
 ```

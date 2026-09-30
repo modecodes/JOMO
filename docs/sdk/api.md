@@ -1,7 +1,7 @@
 # API reference
 
 ```bash
-pnpm add @jomo/sdk viem
+pnpm add @usejomo/sdk viem
 ```
 
 Node ≥ 20.19, ESM or CJS. All amounts are `bigint` in wei / token base units.
