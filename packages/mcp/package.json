@@ -1,0 +1,69 @@
+{
+  "name": "@usejomo/mcp",
+  "version": "0.1.0",
+  "description": "JOMO's privacy layer as MCP tools: private transactions on Robinhood Chain from Claude, OpenAI, Antigravity or any MCP client, approved by you or by limits you set for an autonomous agent.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "jomo-mcp": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./schemas": {
+      "types": "./dist/schemas.d.ts",
+      "import": "./dist/schemas.js",
+      "require": "./dist/schemas.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "plugin",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "robinhood-chain",
+    "stealth-address",
+    "privacy",
+    "agents"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@noble/ciphers": "^2.4.0",
+    "@noble/hashes": "^2.4.0",
+    "@usejomo/sdk": "workspace:*",
+    "viem": "^2.30.0",
+    "zod": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "tsup": "^8.5.1",
+    "typescript": "5.9.3",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modecodes/JOMO.git",
+    "directory": "packages/mcp"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# foundry
+packages/contracts/out/
+packages/contracts/cache/
+packages/contracts/broadcast/
+__pycache__/
+apps/web/public/models/bake/

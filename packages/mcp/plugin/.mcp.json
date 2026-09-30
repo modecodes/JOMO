@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "jomo": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jomo/mcp"
+      ],
+      "env": {
+        "JOMO_CHAIN": "robinhoodTestnet",
+        "JOMO_KEYSTORE": "${HOME}/.jomo/keystore.json",
+        "JOMO_KEYSTORE_PASSPHRASE_CMD": "${JOMO_KEYSTORE_PASSPHRASE_CMD:-}",
+        "JOMO_KEYSTORE_PASSPHRASE": "${JOMO_KEYSTORE_PASSPHRASE:-}",
+        "JOMO_CONFIRM": "${JOMO_CONFIRM:-elicit}",
+        "JOMO_LIMIT_ETH_PER_TX": "${JOMO_LIMIT_ETH_PER_TX:-}",
+        "JOMO_LIMIT_ETH_PER_DAY": "${JOMO_LIMIT_ETH_PER_DAY:-}",
+        "JOMO_LIMIT_TOKENS": "${JOMO_LIMIT_TOKENS:-}",
+        "JOMO_ALLOWED_RECIPIENTS": "${JOMO_ALLOWED_RECIPIENTS:-}",
+        "JOMO_SWEEP_TO": "${JOMO_SWEEP_TO:-}"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "jomo",
+  "version": "0.1.0",
+  "description": "The privacy layer for Robinhood Chain, from a prompt: send, receive and forward ETH or any token through fresh addresses only the recipient can find. Approved by you, or by spending limits you set for an autonomous agent.",
+  "author": {
+    "name": "JOMO"
+  },
+  "keywords": [
+    "robinhood-chain",
+    "privacy",
+    "payments",
+    "stealth-address",
+    "mcp"
+  ]
+}

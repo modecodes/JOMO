@@ -1,0 +1,62 @@
+{
+  "name": "@usejomo/sdk",
+  "version": "0.1.0",
+  "description": "The privacy layer for Robinhood Chain: private transactions for ETH and any token, from any app or agent. ERC-5564 stealth addresses, encrypted memos, scanning and stealth spending.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "robinhood-chain",
+    "stealth-address",
+    "erc-5564",
+    "privacy",
+    "agents",
+    "viem",
+    "arbitrum"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run --exclude \"**/*.integration.test.ts\"",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@noble/ciphers": "^2.4.0",
+    "@noble/curves": "^2.4.0",
+    "@noble/hashes": "^2.4.0"
+  },
+  "peerDependencies": {
+    "viem": "^2.30.0"
+  },
+  "devDependencies": {
+    "@scopelift/stealth-address-sdk": "1.0.0-beta.5",
+    "@types/node": "^20.19.0",
+    "tsup": "^8.5.1",
+    "typescript": "5.9.3",
+    "viem": "2.56.3",
+    "vitest": "^4.1.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modecodes/JOMO.git",
+    "directory": "packages/sdk"
+  }
+}
