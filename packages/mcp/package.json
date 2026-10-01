@@ -1,6 +1,6 @@
 {
   "name": "@usejomo/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JOMO's privacy layer as MCP tools: private transactions on Robinhood Chain from Claude, OpenAI, Antigravity or any MCP client, approved by you or by limits you set for an autonomous agent.",
   "license": "MIT",
   "type": "module",

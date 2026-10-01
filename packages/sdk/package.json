@@ -1,6 +1,6 @@
 {
   "name": "@usejomo/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The privacy layer for Robinhood Chain: private transactions for ETH and any token, from any app or agent. ERC-5564 stealth addresses, encrypted memos, scanning and stealth spending.",
   "license": "MIT",
   "type": "module",
